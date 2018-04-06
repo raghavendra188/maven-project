@@ -7,21 +7,12 @@ pipeline {
                sh 'mvn clean package'
             }
             post{
-            success{
-            	echo 'Now Artifacting'
-            	archiveArtifacts artifacts '**/target/*.war'
-            }
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
+	            success{
+	            		echo 'Now Artifacting'
+	            		archiveArtifacts artifacts: '**/target/*.war'
+	            		}
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+       
     }
 }
