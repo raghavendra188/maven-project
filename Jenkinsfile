@@ -11,8 +11,12 @@ pipeline {
 	            		echo 'Now Artifacting'
 	            		archiveArtifacts artifacts: '**/target/*.war'
 	            		}
-            }
-        }
+            		}
+       			 }
+       	stage('Deploy to Staging'){
+       		steps{
+       		build job : 'deploy_to_staging'
+       	}
        
     }
 }
