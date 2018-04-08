@@ -17,6 +17,7 @@ pipeline {
        		steps{
        		build job : 'deploy_to_staging'
        	}
+     }
        
     }
 }
